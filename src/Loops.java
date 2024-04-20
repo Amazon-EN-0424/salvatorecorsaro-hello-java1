@@ -65,10 +65,16 @@ public class Loops {
 //            BEWARE: There is a bug, the first value is not being capitalized as intended
 //    TODO: fix this bug
             System.out.println("Old value: " + day);
-            System.out.println("New value: " + day.toLowerCase()
-                    .replace(day.charAt(0),
-                            String.valueOf(day.charAt(0))
-                                    .toUpperCase().toCharArray()[0]));
+
+            // Step 1, convert everything to lowercase
+
+            String noCapital = day.toLowerCase();
+
+            // Step 2, use substring method to get first index and capitalize, and then use substring method do generate remaining, based on the lenght of the string
+
+            String noCapitalWithFirstCapital = noCapital.substring(0,1).toUpperCase() + noCapital.substring(1, noCapital.length());
+
+            System.out.println("New value: " + noCapitalWithFirstCapital);
         }
         for (int page : pages) {
             System.out.println(page);
