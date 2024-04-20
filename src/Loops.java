@@ -62,13 +62,17 @@ public class Loops {
         }
 
         for (String day : days){
-//            BEWARE: There is a bug, the first value is not being capitalized as intended
-//    TODO: fix this bug
+
+            //            BEWARE: There is a bug, the first value is not being capitalized as intended
+            //    TODO: fix this bug
+
             System.out.println("Old value: " + day);
-            System.out.println("New value: " + day.toLowerCase()
-                    .replace(day.charAt(0),
-                            String.valueOf(day.charAt(0))
-                                    .toUpperCase().toCharArray()[0]));
+            System.out.println("New value: " + (
+                    Character.isLowerCase(day.charAt(0)) ?
+                            day.toLowerCase().replaceFirst(
+                                    String.valueOf(day.charAt(0)),
+                                    String.valueOf(Character.toUpperCase(day.charAt(0)))) :
+                            day));
         }
         for (int page : pages) {
             System.out.println(page);
