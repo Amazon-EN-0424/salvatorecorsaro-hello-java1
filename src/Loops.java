@@ -8,7 +8,7 @@ public class Loops {
         int[] moreNumbers = new int[6];
         System.out.println(Arrays.toString(moreNumbers));
 
-       String[] days = { "Monday", "tUESDAay", "wEDNESDAY"};
+
 
         String[] names = new String[5];
         names[0] = "Salva";
@@ -61,12 +61,27 @@ public class Loops {
             }
         }
 
-        for (String day : days){
-//            BEWARE: There is a bug, the first value is not being capitalized as intended
-//    TODO: fix this bug
-            System.out.println("Old value: " + day);
-            System.out.println("New value: " + (day.substring(0, 1).toLowerCase() + day.substring(1)));
+
+
+        String[] days = { "Monday", "tUESDAy", "wEDNESDAY"};
+
+        for (int i = 0; i < days.length; i++) {
+            System.out.println("Old value: " + days[i]);
+
+
+            String day = days[i].substring(0, 1).toUpperCase() + days[i].substring(1).toLowerCase();
+            days[i] = day;
+            System.out.println("New value: " + day);
+
+
+
+
+
         }
+
+// Now the days array will contain the capitalized versions of the days
+        System.out.println(Arrays.toString(days));
+
         for (int page : pages) {
             System.out.println(page);
         }
